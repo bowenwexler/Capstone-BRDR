@@ -1,6 +1,20 @@
 ﻿<%@ Page Title="Public Database" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="DatabasePublic.aspx.cs" CodeBehind="~/DatabasePublic.aspx.cs" Inherits="DatabasePublic" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+        input[type=submit] {
+          background-color: #3474eb !important;
+          color: white !important;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+          background-color: #4334eb !important;
+        }
+    </style>
 
     <link href="Content/themes/metroblue/jquery-ui.css" rel="stylesheet" type="text/css" />
     <!-- Include one of jTable styles. -->

@@ -78,7 +78,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - BRDR Capstone Project</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Social Evolution Project</p>
             </footer>
         </div>
     </form>
