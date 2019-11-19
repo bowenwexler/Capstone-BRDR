@@ -3,6 +3,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using System.Web;
 using System;
+using System.Security.Claims;
+
 using BRDR_Capstone;
 
 namespace BRDR_Capstone
@@ -19,7 +21,29 @@ namespace BRDR_Capstone
         public string PasswordHash { get; set; }
 
 
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
+        {
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            return userIdentity;
+        }
+
     }
+
+    public class IdentityUser :
+    IdentityUser<string, IdentityUserLogin, IdentityUserRole,
+    IdentityUserClaim>, IUser, IUser<string>
+    {
+        public IdentityUser()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
+        public IdentityUser(string userName) : this()
+        {
+            this.UserName = userName;
+        }
+    }
+
     public class AdminUser : ApplicationUser
     {
 
